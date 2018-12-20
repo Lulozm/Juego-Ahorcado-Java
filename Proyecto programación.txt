@@ -1,0 +1,60 @@
+//Decimal a Hexadecimal//
+
+package proyectofinal;
+import java.util.Scanner;
+
+public class Hexadecimal{
+
+   public static void main(String args[]){
+     int rem;
+     String str2=""; 
+     
+     Scanner input = new Scanner( System.in );
+     System.out.print("Ingresa un numero decimal");
+     int num =input.nextInt();
+
+     
+     char hex[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+ 
+     while(num>0)
+     {
+       rem=num%16; 
+       str2=hex[rem]+str2; 
+       num=num/16;
+     }
+     System.out.println("Tu numero en hexadecimal es: "+str2);
+  }
+  }
+
+
+
+
+
+//Decimal a Binario//
+package proyectofinal;
+import java.util.Scanner;
+
+public class Conversion{
+
+    public static void main (String[] args) {
+
+        int exp, digito, numero;
+        double binario;
+        Scanner xyz = new Scanner(System.in);
+
+        do{  
+            System.out.print("Introduce un numero decimal ");
+            numero = xyz.nextInt();
+        }while(numero<0);
+
+        exp=0;
+        binario=0;
+        while(numero!=0){
+                digito = numero % 2;            
+                binario = binario + digito * Math.pow(10, exp);   
+                exp++;
+                numero = numero/2;
+        }
+        System.out.printf("Binario: %.0f %n", binario);
+    }
+}
